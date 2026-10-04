@@ -126,7 +126,7 @@ function Hero({ onCTAClick, ctaLabel = 'Book your Quantum Shift call', accentTap
           }}
           onMouseEnter={(e) => e.currentTarget.style.transform = 'rotate(2deg) scale(1.03)'}
           onMouseLeave={(e) => e.currentTarget.style.transform = 'rotate(-4deg)'}>
-            <img src={window.__resources?.bookCover || "assets/book-cover.png"} alt="Alchemist Behavior — A Guide to Becoming a Master Manifestor"
+            <img src={window.__resources?.bookCover || "assets/book-cover.webp"} alt="Alchemist Behavior — A Guide to Becoming a Master Manifestor"
               style={{ width: 320, height: 'auto', borderRadius: 8,
                 boxShadow: '8px 8px 0 #1A1213, 14px 14px 0 var(--neon-yellow)',
                 border: '3px solid #1A1213',

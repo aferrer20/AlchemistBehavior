@@ -20,7 +20,7 @@ function BookSection() {
       <div className="section__inner book-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: 56, alignItems: 'center' }}>
         <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
           <div style={{ transform: 'rotate(-4deg)' }}>
-            <img src={window.__resources?.bookCover || "assets/book-cover.png"} alt="Book cover" style={{ width: 300, borderRadius: 8, border: '3px solid #1A1213', boxShadow: '8px 8px 0 #1A1213, 14px 14px 0 #7BE0E8' }} />
+            <img src={window.__resources?.bookCover || "assets/book-cover.webp"} alt="Book cover" style={{ width: 300, borderRadius: 8, border: '3px solid #1A1213', boxShadow: '8px 8px 0 #1A1213, 14px 14px 0 #7BE0E8' }} />
           </div>
         </div>
         <div>
