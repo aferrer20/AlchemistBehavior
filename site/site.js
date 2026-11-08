@@ -30,7 +30,12 @@
   // ---------- Form helper ----------
   function send(form) {
     return fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-      .then(function (r) { if (!r.ok) throw new Error('bad'); return r; });
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok || j.success === false) throw new Error('bad');
+          return j;
+        });
+      });
   }
   function busy(btn, on, label) {
     if (!btn) return;
