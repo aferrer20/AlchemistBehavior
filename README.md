@@ -10,11 +10,14 @@ Website for Amanda Ferrer's private mindset and manifestation coaching (the 3-Mo
 
 ## Shared files (`site/`)
 
-- `site.css`: the design system (onyx, ivory, champagne gold; Cormorant Garamond + Jost, self-hosted under SIL OFL).
-- `site.js`: small enhancements only (sticky nav, mobile menu, scroll reveals, book order dialog).
-- `book-cover.webp`, `og-image.jpg` (1200x630 social share image).
+- `site.css`: the brand design system from the book (pink to sunshine gradients, teal, Anton, Playfair Display, Pacifico, DM Sans; self-hosted under SIL OFL).
+- `site.js`: mobile menu, scroll reveals, lead forms with instant kit download, the manifestation quiz, the book order dialog and a one-time exit offer.
+- `amanda-ferrer.webp`, `book-cover.webp`, `signature-dark.png`, `og-image.jpg` (1200x630 share image).
+- `manifesting-starter-kit.pdf`: the free lead magnet delivered after every opt-in.
 
-## Forms
+## Forms and leads
+
+- All lead forms (hero, quiz, kit section, exit offer, prompts page) post to Formspree with a `source` field so you can see which one converted. Swap the form `action` to move leads into an email platform.
 
 - Book orders post to Formspree (`xwvydndk`); Amanda emails a payment link.
 - Intake submits via Web3Forms from `intake.html`.
