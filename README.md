@@ -17,9 +17,9 @@ Website for Amanda Ferrer's private mindset and manifestation coaching (the 3-Mo
 
 ## Forms and leads
 
-- All lead forms (hero, quiz, kit section, exit offer, prompts page) post to Formspree with a `source` field so you can see which one converted. Swap the form `action` to move leads into an email platform.
+- All forms (hero, quiz, kit section, exit offer, prompts page, book order and intake) post to Web3Forms with the same access key, so submissions arrive in one inbox. Lead forms include a `source` field (and `result` for the quiz) to show which form converted. A hidden `botcheck` field blocks spam bots.
 
-- Book orders post to Formspree (`xwvydndk`); Amanda emails a payment link.
+- Book orders: Amanda emails a payment link after each order.
 - Intake submits via Web3Forms from `intake.html`.
 
 ## Adding a page
