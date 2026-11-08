@@ -31,7 +31,7 @@
   --coral: #ff8a76;
   --gold: #e9c47e;
   --gold-soft: #f4dfb5;
-  --gold-deep: #a97c35;
+  --gold-deep: #85601f;
   --line: rgba(27, 21, 38, 0.12);
   --line-dark: rgba(233, 196, 126, 0.22);
   --grad: linear-gradient(115deg, #f2559a 0%, #ff8a76 52%, #f3c46b 100%);
@@ -485,3 +485,20 @@ dialog.modal::backdrop { background: rgba(11, 7, 20, 0.72); backdrop-filter: blu
   .portrait__book { left: -10px; bottom: -14px; }
   .portrait__name { right: -8px; bottom: 0; }
 }
+
+/* Real Starter Kit pages (book branding) */
+img.lead__icon { width: 52px; height: 67px; padding: 0; background: none; border: 0; border-radius: 4px; object-fit: cover; box-shadow: 0 10px 20px -8px rgba(242, 85, 154, 0.6), 0 0 0 1px rgba(27, 21, 38, 0.08); transform: rotate(-4deg); }
+.kit__img { position: absolute; width: 62%; height: auto; border-radius: 6px; box-shadow: 0 30px 60px -22px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.12); transition: transform 0.4s ease; }
+.kit__img--1 { left: 4%; top: 10%; transform: rotate(-6deg); z-index: 2; }
+.kit__img--2 { right: 4%; top: 2%; transform: rotate(6deg); z-index: 1; }
+.kit__mock:hover .kit__img--1 { transform: rotate(-3deg) translateY(-6px); }
+.kit__mock:hover .kit__img--2 { transform: rotate(9deg) translateX(8px); }
+
+/* Audit fixes: tap targets, FAQ icon bounds */
+.bar a { display: inline-block; padding: 8px 2px; margin: -8px 0; }
+.brand { padding: 4px 0; }
+.footer ul a { display: inline-block; padding: 5px 0; }
+.footer .brand { padding: 6px 0; }
+.faq summary::after { transition: background 0.25s, color 0.25s; }
+.faq details[open] summary::after { content: "\2212"; transform: none; }
+@media (max-width: 1200px) { .hero > .sparkle:nth-of-type(1), .hero > .sparkle:nth-of-type(2) { display: none; } }
