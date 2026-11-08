@@ -468,3 +468,20 @@ dialog.modal::backdrop { background: rgba(11, 7, 20, 0.72); backdrop-filter: blu
   .mbar .btn { padding: 13px 10px; font-size: 14.5px; }
 }
 .hero .mega { font-size: clamp(44px, 5.7vw, 82px); }
+
+/* Circular "moon" portrait (photo is a circle) */
+.portrait::before { inset: -18px; border-radius: 50%; }
+.portrait::after { content: ""; position: absolute; inset: -36px; border-radius: 50%; border: 1px dashed rgba(233, 196, 126, 0.16); pointer-events: none; }
+.portrait__frame { border-radius: 50%; aspect-ratio: 1 / 1; background: transparent; }
+.portrait__frame img { object-position: center; }
+.portrait__book { left: -34px; bottom: -18px; }
+.portrait__sticker { right: -14px; top: 4px; }
+.portrait__name { right: -18px; bottom: 6px; }
+.about__photo::before { inset: -14px 14px 14px -14px; border-radius: 50%; }
+.about__photo img { border-radius: 50%; }
+.about__photo .tag { bottom: -6px; }
+@media (max-width: 680px) {
+  .portrait::after { inset: -24px; }
+  .portrait__book { left: -10px; bottom: -14px; }
+  .portrait__name { right: -8px; bottom: 0; }
+}
