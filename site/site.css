@@ -485,3 +485,11 @@ dialog.modal::backdrop { background: rgba(11, 7, 20, 0.72); backdrop-filter: blu
   .portrait__book { left: -10px; bottom: -14px; }
   .portrait__name { right: -8px; bottom: 0; }
 }
+
+/* Real Starter Kit pages (book branding) */
+img.lead__icon { width: 52px; height: 67px; padding: 0; background: none; border: 0; border-radius: 4px; object-fit: cover; box-shadow: 0 10px 20px -8px rgba(242, 85, 154, 0.6), 0 0 0 1px rgba(27, 21, 38, 0.08); transform: rotate(-4deg); }
+.kit__img { position: absolute; width: 62%; height: auto; border-radius: 6px; box-shadow: 0 30px 60px -22px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.12); transition: transform 0.4s ease; }
+.kit__img--1 { left: 4%; top: 10%; transform: rotate(-6deg); z-index: 2; }
+.kit__img--2 { right: 4%; top: 2%; transform: rotate(6deg); z-index: 1; }
+.kit__mock:hover .kit__img--1 { transform: rotate(-3deg) translateY(-6px); }
+.kit__mock:hover .kit__img--2 { transform: rotate(9deg) translateX(8px); }
