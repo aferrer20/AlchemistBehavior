@@ -374,3 +374,16 @@ dialog.order::backdrop { background: rgba(10, 9, 8, 0.72); backdrop-filter: blur
 .book__quote { margin: 0 0 26px; padding-left: 22px; border-left: 1px solid var(--gold); font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.45; color: var(--ink); }
 .book__quote cite { display: block; margin-top: 10px; font-family: var(--sans); font-style: normal; font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
 .book__quote cite em { font-family: var(--sans); font-style: normal; }
+
+/* Book: inside summary + table of contents */
+.book__inside { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 30px; }
+.book__inside span { font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; border: 1px solid var(--line-light); padding: 8px 12px; color: var(--ink-soft); font-weight: 400; }
+.toc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-light); border: 1px solid var(--line-light); }
+.toc-card { background: var(--paper); padding: 32px 30px 30px; }
+.toc-card__num { font-family: var(--serif); font-size: 34px; line-height: 1; color: var(--gold); }
+.toc-card h3 { font-size: 25px; margin: 14px 0 14px; }
+.toc-card ul { list-style: none; margin: 0; padding: 0; }
+.toc-card li { font-size: 15px; color: var(--ink-soft); padding: 7px 0; border-top: 1px solid var(--line-light); }
+.toc-foot { margin-top: 26px; color: var(--ink-soft); font-size: 15px; }
+@media (max-width: 1020px) { .toc-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 680px) { .toc-grid { grid-template-columns: 1fr; } .toc-card { padding: 28px 24px; } }
