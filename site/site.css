@@ -361,3 +361,16 @@ dialog.order::backdrop { background: rgba(10, 9, 8, 0.72); backdrop-filter: blur
   .pillar__num { font-size: 36px; }
   .pillar__label { letter-spacing: 0.14em; font-size: 11px; }
 }
+
+/* Note from Amanda */
+.note { max-width: 860px; text-align: center; }
+.note__text { margin: 34px 0 0; font-family: var(--serif); font-size: clamp(22px, 2.4vw, 29px); line-height: 1.5; color: var(--ink); }
+.note__text p { margin: 0 0 1em; }
+.note__text em { color: var(--gold-deep); }
+.note__signature { width: min(300px, 70%); margin: 14px auto 0; }
+.note__role { margin-top: 14px; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-deep); }
+
+/* Book pull quote */
+.book__quote { margin: 0 0 26px; padding-left: 22px; border-left: 1px solid var(--gold); font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.45; color: var(--ink); }
+.book__quote cite { display: block; margin-top: 10px; font-family: var(--sans); font-style: normal; font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
+.book__quote cite em { font-family: var(--sans); font-style: normal; }
