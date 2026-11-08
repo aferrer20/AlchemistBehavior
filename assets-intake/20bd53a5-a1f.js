@@ -1038,14 +1038,14 @@ function BookSection() {
       letterSpacing: '-.01em',
       textWrap: 'balance'
     }
-  }, "A field guide for the woman who's done playing small."), /*#__PURE__*/React.createElement("p", {
+  }, "A field guide for anyone who's done playing small."), /*#__PURE__*/React.createElement("p", {
     style: {
       margin: 0,
       font: '400 var(--fs-body-lg)/1.6 var(--font-sans)',
       color: 'var(--ink-700)',
       maxWidth: 560
     }
-  }, "Part memoir, part spellbook. Amanda walks you through the exact shifts that took her from burnt-out and second-guessing to living her highest & best \u2014 on purpose."), /*#__PURE__*/React.createElement(Card, {
+  }, "Part memoir, part spellbook. Amanda walks you through the exact shifts that take you from burnt-out and second-guessing to living your highest & best \u2014 on purpose."), /*#__PURE__*/React.createElement(Card, {
     tone: "sun",
     padding: 22,
     hoverTilt: false,
@@ -1122,7 +1122,7 @@ function BookingDialog({
   return /*#__PURE__*/React.createElement(Dialog, {
     open: open,
     onClose: close,
-    title: done ? 'You\'re in, babe ✨' : 'Book your Quantum Shift Call'
+    title: done ? 'You\'re in ✨' : 'Book your Quantum Shift Call'
   }, done ? /*#__PURE__*/React.createElement("div", {
     style: {
       textAlign: 'center',
@@ -1203,7 +1203,7 @@ function FAQ() {
   } = window.AlchemistBehaviorDesignSystem_2028e4;
   const items = [{
     q: 'Is this program for me?',
-    a: "If you've been feeling the pull toward something bigger and you're tired of just thinking about it — yes, babe. That pull is the program starting."
+    a: "If you've been feeling the pull toward something bigger and you're tired of just thinking about it — yes, you. That pull is the program starting."
   }, {
     q: 'How much time does it take each week?',
     a: 'One 60-minute call, plus tiny daily practices that fit inside the life you already have. Small, consistent, magic.'
@@ -1514,7 +1514,7 @@ function ProgramSection({
   const modules = {
     '01': ['Unbecoming', 'Month 1', 'Clear the old stories, the borrowed goals and the "shoulds." We make space before we build.', 'pink'],
     '02': ['Rewiring', 'Month 2', 'New beliefs, new habits, new nervous-system baseline. This is where behavior actually changes.', 'cyan'],
-    '03': ['Embodying', 'Month 3', 'Act, decide and show up as her — daily. The shift stops being an idea and becomes your life.', 'lime']
+    '03': ['Embodying', 'Month 3', 'Act, decide and show up as that version of you — daily. The shift stops being an idea and becomes your life.', 'lime']
   };
   const included = [['video', '12 weekly 1:1 calls'], ['message-circle', 'Voice-note support between calls'], ['notebook-pen', 'Custom daily practice'], ['sparkles', 'Quantum Shift workbook']];
   const forWho = ['You can feel there is more for you', 'You are tired of knowing and not doing', 'You are ready to be held accountable — lovingly'];

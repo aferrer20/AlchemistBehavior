@@ -1,1325 +1,709 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alchemist Behavior — 3-Month Quantum Shift Program</title>
-  
-  <style>/* =============================================================
-   ALCHEMIST BEHAVIOR — Colors & Type
-   90s nostalgic candy-coated palette + display-heavy typography
-   ============================================================= */
-
-/* ---- Webfonts ----
-   Sourced from Google Fonts as nearest matches to the book interior.
-   FLAGGED SUBSTITUTIONS — request original font files from client:
-     • "Anton"          → display ALL-CAPS chapter headers (matches book)
-     • "Bungee"         → chunky outlined comic-book display ("MOMENT", "VIBRATION")
-     • "Playfair Display Italic" → elegant italic serif subtitles
-     • "Pacifico"       → cursive labels ("Journal Prompts", "Affirmation")
-     • "Caveat Brush"   → handwritten brush ("How to Script", "Myth-Busting")
-     • "Lora"           → body serif paragraphs (warm, readable)
-     • "VT323" / "Press Start 2P" → 90s pixel/arcade accent (used sparingly on
-                                    "GRATITUDE / JOURNALING / MUSIC" stencil headers)
-   ----------------------------------------------------------- */
-/* vietnamese */
-@font-face {
-  font-family: 'Anton';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/ed2803f0-149.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Anton';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/39a68af9-e38.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Anton';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/fd955b31-533.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Bungee';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/d6a66d0f-4db.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Bungee';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/3257dbe3-3f3.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Bungee';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/4381e626-7c2.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Bungee Shade';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/d18ff675-005.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Bungee Shade';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/8c947c63-274.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Bungee Shade';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/eeb55e15-3d6.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Caveat Brush';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/f0dee993-a2f.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Caveat Brush';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/95ea3c9c-b68.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/69f18a83-8b5.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/a69af689-894.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* math */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/2d80e467-6c4.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/f91d5855-e2d.woff2") format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/977fce3b-63e.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/d3e24ee2-eaa.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/bcd1f0d9-b1c.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/69f18a83-8b5.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/a69af689-894.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* math */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/2d80e467-6c4.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/f91d5855-e2d.woff2") format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/977fce3b-63e.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/d3e24ee2-eaa.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/bcd1f0d9-b1c.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/5ebd2b1b-fb7.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/adc5c1e8-219.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* math */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/44c6b83a-d65.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/2983676a-eef.woff2") format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/8b147b9b-9ff.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/d0ddebdc-03c.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/75ba6b30-ee2.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/5ebd2b1b-fb7.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/adc5c1e8-219.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* math */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/44c6b83a-d65.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/2983676a-eef.woff2") format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/8b147b9b-9ff.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/d0ddebdc-03c.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("assets/75ba6b30-ee2.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/5ebd2b1b-fb7.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/adc5c1e8-219.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* math */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/44c6b83a-d65.woff2") format('woff2');
-  unicode-range: U+0302-0303, U+0305, U+0307-0308, U+0310, U+0312, U+0315, U+031A, U+0326-0327, U+032C, U+032F-0330, U+0332-0333, U+0338, U+033A, U+0346, U+034D, U+0391-03A1, U+03A3-03A9, U+03B1-03C9, U+03D1, U+03D5-03D6, U+03F0-03F1, U+03F4-03F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF;
-}
-/* symbols */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/2983676a-eef.woff2") format('woff2');
-  unicode-range: U+0001-000C, U+000E-001F, U+007F-009F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F7FF, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB00-1FBFF;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/8b147b9b-9ff.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/d0ddebdc-03c.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Lora';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("assets/75ba6b30-ee2.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/ee85b2ca-dfb.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/285501b9-1c5.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/0fcfdd08-b7d.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/cad8c1a9-eac.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Pacifico';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/8d1a7248-093.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/01000c55-31d.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/254cac53-ea5.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/e1fab549-692.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/e9a3fbfe-2e5.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/01000c55-31d.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/254cac53-ea5.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/e1fab549-692.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/e9a3fbfe-2e5.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/5af29ed1-b7d.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/5e844337-fa0.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/4e39ccb2-e36.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/9cc01160-951.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/5af29ed1-b7d.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/5e844337-fa0.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/4e39ccb2-e36.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Playfair Display';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("assets/9cc01160-951.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* cyrillic-ext */
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/8e0739a5-034.woff2") format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-/* cyrillic */
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/5eb54cd6-4ff.woff2") format('woff2');
-  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-}
-/* greek */
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/96fcc864-ab7.woff2") format('woff2');
-  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/32264575-08a.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/e7f63c92-e74.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'VT323';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/5a71f6d1-eed.woff2") format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'VT323';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/37c11131-e0d.woff2") format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'VT323';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/14beb7f4-9a9.woff2") format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-
-:root {
-  /* ============================================================
-     COLORS — 90s candy palette
-     Each "page color" is a saturated mid-tone background.
-     White text sits on top with drop shadow for depth.
-     ============================================================ */
-
-  /* Brand signature gradient (book cover) */
-  --grad-cover: radial-gradient(circle at 50% 55%, #FF8B5C 0%, #FF5BA0 35%, #C957C9 70%, #9F4FB8 100%);
-  --grad-sunset: linear-gradient(135deg, #FFB87A 0%, #FF6FA8 50%, #E84B9C 100%);
-  --grad-peach-pink: linear-gradient(180deg, #FFB37A 0%, #FF7FA8 100%);
-
-  /* Page-block colors (lifted directly from book spreads) */
-  --pg-pink:        #E04F8E;   /* hot bubblegum (Ch.7, Abundance) */
-  --pg-pink-light: #E893B8;    /* softer pink (Ch.2 Self-Concept) */
-  --pg-coral:       #E15549;   /* salmon-coral (Gratitude, How to Script) */
-  --pg-teal:        #2E8C8C;   /* deep seafoam (Money, Daily Framework) */
-  --pg-teal-deep:   #1F7374;   /* darker variant */
-  --pg-lavender:    #9E85C8;   /* purple-lavender (Limiting Belief) */
-  --pg-grape:       #7E5BAF;   /* deeper purple (Aligned Action) */
-  --pg-periwinkle:  #6B6BD9;   /* indigo-blue (How to Visualize) */
-  --pg-cream:       #F4D5A8;   /* peachy cream */
-
-  /* Vibrant accents — neon pop */
-  --neon-yellow:    #F7E84B;   /* highlighter yellow */
-  --neon-lime:      #D8FF3C;   /* highlight lime */
-  --neon-mustard:   #C9B544;   /* mustard yellow */
-  --neon-cyan:      #7BE0E8;   /* sky cyan */
-  --neon-pink:      #FF6FA8;   /* candy pink */
-  --neon-magenta:   #FF4FB6;   /* hot magenta */
-  --neon-coral:     #FF8B5C;   /* coral pop */
-
-  /* Text */
-  --fg1:           #FFFFFF;    /* primary on-color text */
-  --fg1-shadow:    rgba(0,0,0,0.18);
-  --fg-ink:        #1A1213;    /* near-black plum (copyright pages) */
-  --fg-ink-soft:   #3A2A2D;
-  --fg-muted:      rgba(255,255,255,0.75);
-  --fg-muted-deep: rgba(0,0,0,0.55);
-
-  /* Surfaces */
-  --surface-cream: #FFF4E3;    /* off-white page */
-  --surface-white: #FFFFFF;
-  --surface-dark:  #1A1213;
-
-  /* Borders / dividers */
-  --border-soft:   rgba(255,255,255,0.35);
-  --border-ink:    rgba(0,0,0,0.85);
-
-  /* ============================================================
-     TYPOGRAPHY — base families
-     ============================================================ */
-  --font-display:  "Anton", "Impact", sans-serif;             /* tall condensed sans, ALL CAPS chapter heads */
-  --font-comic:    "Bungee", "Bungee Shade", system-ui;       /* chunky outlined comic display */
-  --font-comic-3d: "Bungee Shade", "Bungee", system-ui;       /* 3D-shadowed variant */
-  --font-italic:   "Playfair Display", Georgia, serif;        /* italic serif subtitles */
-  --font-script:   "Pacifico", "Brush Script MT", cursive;    /* cursive labels */
-  --font-brush:    "Caveat Brush", "Marker Felt", cursive;    /* loose marker brush */
-  --font-body:     "Lora", "Georgia", serif;                  /* body paragraphs */
-  --font-mono:     "VT323", "Courier New", monospace;         /* 90s terminal */
-  --font-pixel:    "Press Start 2P", "VT323", monospace;      /* 8-bit pixel display */
-
-  /* ============================================================
-     SEMANTIC TYPE TOKENS
-     ============================================================ */
-  --type-h1-family: var(--font-display);
-  --type-h1-size: clamp(48px, 7vw, 96px);
-  --type-h1-weight: 400;
-  --type-h1-leading: 0.9;
-  --type-h1-tracking: -0.01em;
-  --type-h1-case: uppercase;
-
-  --type-h2-family: var(--font-display);
-  --type-h2-size: clamp(36px, 5vw, 64px);
-  --type-h2-weight: 400;
-  --type-h2-leading: 1.0;
-  --type-h2-case: uppercase;
-
-  --type-h3-family: var(--font-italic);
-  --type-h3-style: italic;
-  --type-h3-size: clamp(28px, 3.4vw, 44px);
-  --type-h3-weight: 700;
-
-  --type-eyebrow-family: var(--font-display);
-  --type-eyebrow-size: 14px;
-  --type-eyebrow-tracking: 0.2em;
-  --type-eyebrow-case: uppercase;
-
-  --type-script-family: var(--font-script);
-  --type-script-size: clamp(22px, 2.4vw, 32px);
-
-  --type-body-family: var(--font-body);
-  --type-body-size: 17px;
-  --type-body-leading: 1.55;
-
-  --type-quote-family: var(--font-italic);
-  --type-quote-style: italic;
-  --type-quote-size: 22px;
-
-  /* ============================================================
-     SHADOWS / EFFECTS
-     ============================================================ */
-  --shadow-text-soft: 0 2px 0 rgba(0,0,0,0.18), 0 4px 14px rgba(0,0,0,0.12);
-  --shadow-text-bold: 3px 3px 0 rgba(0,0,0,0.85);            /* hard offset 90s */
-  --shadow-text-3d:   2px 2px 0 #1A1213, 4px 4px 0 #1A1213, 6px 6px 0 #1A1213;
-  --glow-yellow:      0 0 12px rgba(247,232,75,0.7), 0 0 24px rgba(247,232,75,0.4);
-  --glow-pink:        0 0 12px rgba(255,79,182,0.7), 0 0 28px rgba(255,79,182,0.4);
-  --glow-cyan:        0 0 10px rgba(123,224,232,0.8), 0 0 22px rgba(123,224,232,0.5);
-
-  --shadow-card:       0 6px 18px rgba(26,18,19,0.18);
-  --shadow-card-hover: 0 10px 28px rgba(26,18,19,0.28);
-  --shadow-card-pop:   6px 6px 0 #1A1213;                    /* hard offset 90s sticker */
-
-  /* Highlight tape (rotated colored bar behind a word) */
-  --tape-yellow: var(--neon-yellow);
-  --tape-pink:   var(--neon-magenta);
-  --tape-lime:   var(--neon-lime);
-  --tape-cyan:   var(--neon-cyan);
-
-  /* ============================================================
-     SPACING / RADII
-     ============================================================ */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 64px;
-  --space-9: 96px;
-
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 22px;
-  --radius-xl: 32px;
-  --radius-pill: 999px;
-
-  /* Motion */
-  --ease-bounce: cubic-bezier(.34,1.56,.64,1);
-  --ease-out:    cubic-bezier(.2,.7,.2,1);
-  --dur-fast:    140ms;
-  --dur-base:    240ms;
-  --dur-slow:    420ms;
-}
-
-/* ============================================================
-   BASE ELEMENT STYLES (semantic tags)
-   ============================================================ */
-.ab-h1, h1.ab {
-  font-family: var(--type-h1-family);
-  font-size: var(--type-h1-size);
-  font-weight: var(--type-h1-weight);
-  line-height: var(--type-h1-leading);
-  letter-spacing: var(--type-h1-tracking);
-  text-transform: var(--type-h1-case);
-  color: var(--fg1);
-  text-shadow: var(--shadow-text-soft);
-  margin: 0;
-}
-
-.ab-h2, h2.ab {
-  font-family: var(--type-h2-family);
-  font-size: var(--type-h2-size);
-  font-weight: var(--type-h2-weight);
-  line-height: var(--type-h2-leading);
-  text-transform: var(--type-h2-case);
-  color: var(--fg1);
-  text-shadow: var(--shadow-text-soft);
-  margin: 0;
-}
-
-.ab-h3, h3.ab {
-  font-family: var(--type-h3-family);
-  font-style: var(--type-h3-style);
-  font-size: var(--type-h3-size);
-  font-weight: var(--type-h3-weight);
-  color: var(--fg1);
-  margin: 0;
-}
-
-.ab-eyebrow {
-  font-family: var(--type-eyebrow-family);
-  font-size: var(--type-eyebrow-size);
-  letter-spacing: var(--type-eyebrow-tracking);
-  text-transform: var(--type-eyebrow-case);
-  color: var(--fg1);
-}
-
-.ab-script {
-  font-family: var(--type-script-family);
-  font-size: var(--type-script-size);
-  color: var(--fg1);
-  text-shadow: var(--glow-yellow);
-}
-
-.ab-brush {
-  font-family: var(--font-brush);
-  font-size: clamp(40px, 5vw, 72px);
-  color: var(--neon-yellow);
-  text-shadow: var(--shadow-text-bold);
-  letter-spacing: 0.01em;
-}
-
-.ab-comic {
-  font-family: var(--font-comic);
-  font-size: clamp(32px, 4vw, 56px);
-  color: var(--neon-yellow);
-  -webkit-text-stroke: 2px #1A1213;
-  text-shadow: 4px 4px 0 #1A1213;
-  letter-spacing: 0.02em;
-}
-
-.ab-pixel {
-  font-family: var(--font-pixel);
-  font-size: 16px;
-  color: var(--neon-cyan);
-  text-shadow: 2px 2px 0 var(--neon-magenta);
-  letter-spacing: 0.05em;
-}
-
-.ab-body, p.ab {
-  font-family: var(--type-body-family);
-  font-size: var(--type-body-size);
-  line-height: var(--type-body-leading);
-  color: var(--fg1);
-}
-
-/* Highlight tape — rotated colored bar behind text */
-.ab-tape {
-  display: inline-block;
-  background: var(--tape-yellow);
-  color: var(--fg-ink);
-  padding: 0.05em 0.35em;
-  transform: rotate(-2deg);
-  box-shadow: 3px 3px 0 rgba(0,0,0,0.85);
-}
-.ab-tape--pink   { background: var(--tape-pink); color: #fff; }
-.ab-tape--lime   { background: var(--tape-lime); color: var(--fg-ink); }
-.ab-tape--cyan   { background: var(--tape-cyan); color: var(--fg-ink); }
-
-/* Sparkle/moon emoji utility — keeps them inline, slightly rotated */
-.ab-sparkle::before { content: "✨"; margin-right: 0.3em; }
-.ab-moon::before    { content: "🌙"; margin-right: 0.3em; }
-</style>
-  <style>/* landing.css — page-level styles for the Alchemist Behavior landing page */
-
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #FFF4E3;
-  color: var(--fg-ink);
-  font-family: var(--font-body);
-  scroll-behavior: smooth;
-}
-* { box-sizing: border-box; }
-
-/* === Section scaffolding === */
-.section {
-  position: relative;
-  padding: 96px 32px;
-  overflow: hidden;
-}
-.section__inner {
-  max-width: 1180px;
-  margin: 0 auto;
-}
-
-/* === Sticker pop button === */
-.btn-pop {
-  font-family: var(--font-display);
-  font-size: 18px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: var(--neon-yellow);
-  color: var(--fg-ink);
-  border: 2.5px solid var(--fg-ink);
-  border-radius: 14px;
-  padding: 14px 22px;
-  box-shadow: 5px 5px 0 var(--fg-ink);
-  cursor: pointer;
-  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.btn-pop:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 3px 3px 0 var(--fg-ink);
-}
-.btn-pop:active {
-  transform: translate(5px, 5px);
-  box-shadow: 0 0 0 var(--fg-ink);
-}
-.btn-pop--pink   { background: var(--neon-magenta); color: #fff; }
-.btn-pop--cyan   { background: var(--neon-cyan); }
-.btn-pop--coral  { background: var(--neon-coral); color: #fff; }
-.btn-pop--ghost  { background: transparent; box-shadow: none; }
-.btn-pop--ghost:hover { background: rgba(0,0,0,0.06); transform: none; box-shadow: none; }
-
-/* === Card pop === */
-.card-pop {
-  background: #fff;
-  border: 2.5px solid var(--fg-ink);
-  border-radius: 18px;
-  box-shadow: 6px 6px 0 var(--fg-ink);
-  transition: transform var(--dur-base) var(--ease-bounce);
-}
-.card-pop:hover {
-  transform: rotate(-1deg) translate(-2px, -2px);
-}
-
-/* === Highlight tape === */
-.tape {
-  display: inline-block;
-  padding: 0 0.18em;
-  transform: rotate(-3deg);
-  box-shadow: 3px 3px 0 rgba(0,0,0,0.85);
-}
-
-/* === Eyebrow === */
-.eyebrow {
-  font-family: var(--font-display);
-  font-size: 14px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--fg-ink);
-}
-
-/* === Section heading === */
-.s-h1 {
-  font-family: var(--font-display);
-  font-size: clamp(48px, 7vw, 92px);
-  line-height: 0.92;
-  text-transform: uppercase;
-  margin: 0;
-  letter-spacing: -0.005em;
-}
-.s-italic {
-  font-family: var(--font-italic);
-  font-style: italic;
-  font-weight: 700;
-}
-
-/* === Floating sparkle === */
-@keyframes float-y {
-  0%,100% { transform: translateY(0) rotate(0deg); }
-  50%     { transform: translateY(-8px) rotate(6deg); }
-}
-.sparkle-float { animation: float-y 4s ease-in-out infinite; display: inline-block; }
-
-/* === Marquee === */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-
-/* === Modal === */
-.modal-backdrop {
-  position: fixed; inset: 0;
-  background: rgba(26,18,19,0.65);
-  display: flex; align-items: center; justify-content: center;
-  z-index: 100;
-  padding: 20px;
-}
-.modal {
-  width: 100%; max-width: 480px;
-  background: var(--surface-cream);
-  border: 2.5px solid var(--fg-ink);
-  border-radius: 22px;
-  box-shadow: 8px 8px 0 var(--fg-ink);
-  padding: 28px;
-  position: relative;
-}
-
-/* === Celebration overlay === */
-@keyframes pop-in {
-  0%   { transform: scale(0.6); opacity: 0; }
-  60%  { transform: scale(1.08); opacity: 1; }
-  100% { transform: scale(1); opacity: 1; }
-}
-.celebrate {
-  animation: pop-in 480ms var(--ease-bounce) both;
-}
-
-/* === Scroll-spy nav === */
-.nav-link.active {
-  color: var(--neon-magenta);
-}
-
-/* ==============================================
-   RESPONSIVE — tablet + phone
-   ============================================== */
-
-/* Tablet & below */
-@media (max-width: 900px) {
-  .section { padding: 64px 22px; }
-
-  /* Nav: shrink links, allow wrap */
-  nav .nav-inner { padding: 12px 20px !important; }
-  nav a.nav-brand-text { font-size: 18px !important; }
-  nav .nav-links { gap: 16px !important; }
-
-  /* Hero — stack book under copy, recenter */
-  .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 36px !important;
-    text-align: left;
-    min-height: auto !important;
-  }
-  .hero-book-wrap img { width: 240px !important; }
-  .hero-book-wrap .hero-halo {
-    width: 280px !important; height: 280px !important;
-  }
-
-  /* All 3-col / 2-col grids → stack to 2 cols, then 1 */
-  .grid-3, .grid-2, .footer-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-
-  /* Book section — stack image above copy */
-  .book-grid {
-    grid-template-columns: 1fr !important;
-    gap: 36px !important;
-  }
-
-  /* Headlines a touch tighter */
-  .s-h1 { font-size: clamp(40px, 9vw, 72px) !important; }
-}
-
-/* Phone */
-@media (max-width: 640px) {
-  .section { padding: 56px 18px; }
-
-  /* Hide non-essential nav links — keep brand + CTA */
-  nav .nav-links a:not(.nav-cta) { display: none !important; }
-  nav .nav-links { gap: 10px !important; }
-
-  /* Hero copy */
-  .hero-eyebrow {
-    font-size: 11px !important;
-    padding: 6px 11px !important;
-  }
-  .hero-grid { padding: 0 18px !important; }
-  .hero-grid h1 { font-size: clamp(44px, 12vw, 64px) !important; }
-  .hero-grid p { font-size: 17px !important; }
-  .hero-book-wrap img {
-    width: 200px !important;
-    box-shadow: 6px 6px 0 #1A1213, 10px 10px 0 var(--neon-yellow) !important;
-  }
-  .hero-book-wrap .hero-halo {
-    width: 220px !important; height: 220px !important;
-  }
-  .hero-stats { gap: 16px !important; }
-  .hero-stats > div > div:first-child { font-size: 30px !important; }
-
-  /* All grids → single column */
-  .grid-3, .grid-2, .footer-grid, .chapters-grid, .order-form-row {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Footer alignment */
-  .footer-grid { gap: 28px !important; }
-
-  /* Buttons */
-  .btn-pop {
-    font-size: 15px !important;
-    padding: 12px 18px !important;
-    box-shadow: 4px 4px 0 var(--fg-ink);
-  }
-
-  /* Section titles */
-  .s-h1 { font-size: clamp(36px, 11vw, 56px) !important; }
-
-  /* Marquee — smaller text */
-  .marquee-track { font-size: 32px !important; }
-
-  /* Modal */
-  .modal { padding: 22px 20px; border-radius: 18px; }
-
-  /* Cards a bit tighter */
-  .card-pop { box-shadow: 4px 4px 0 var(--fg-ink); }
-
-  /* Program headline plate */
-  .program-plate { padding: 18px 22px 22px !important; }
-}
-</style>
-  <script src="assets/react.production.min.js"></script>
-  <script src="assets/react-dom.production.min.js"></script>
-  <meta name="description" content="Amanda's 3-Month Quantum Shift Program: mindset + manifestation coaching for women ready to magnetize their next-level self. Book your Quantum Shift Call.">
-  <meta name="keywords" content="manifestation coach, mindset coach for women, quantum shift, manifestation coaching program, feminine energy coach, magnetic manifestation, Alchemist Behavior, Amanda Ferrer, manifesting program, high-level coaching for women, 3 month coaching, soul yes, magnetic AF">
-  <meta name="author" content="Amanda — Alchemist Behavior">
+  <title>Amanda Ferrer | Manifestation &amp; Mindset Coach | Alchemist Behavior</title>
+  <meta name="description" content="Manifestation and mindset coaching with Amanda Ferrer. Take the free 60-second manifestation quiz, get the Manifesting Starter Kit, read the book Alchemist Behavior, or join the 3-Month Quantum Shift Program.">
+  <meta name="author" content="Amanda Ferrer">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://www.alchemistbehavior.com/">
+  <meta name="theme-color" content="#120c1f">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Alchemist Behavior">
   <meta property="og:url" content="https://www.alchemistbehavior.com/">
-  <meta property="og:title" content="Alchemist Behavior — 3-Month Quantum Shift Program">
-  <meta property="og:description" content="Mindset + manifestation coaching for women ready to magnetize their next-level self. Book your Quantum Shift Call.">
+  <meta property="og:title" content="Become the version of you who already has it | Alchemist Behavior">
+  <meta property="og:description" content="Free manifestation quiz and starter kit from Amanda Ferrer, author of Alchemist Behavior and creator of the 3-Month Quantum Shift Program.">
+  <meta property="og:image" content="https://www.alchemistbehavior.com/site/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Amanda Ferrer with the book Alchemist Behavior">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Alchemist Behavior — 3-Month Quantum Shift Program">
-  <meta name="twitter:description" content="Mindset + manifestation coaching for women ready to magnetize their next-level self. Book your Quantum Shift Call.">
-  <meta name="theme-color" content="#FF5BA0">
+  <meta name="twitter:title" content="Become the version of you who already has it | Alchemist Behavior">
+  <meta name="twitter:description" content="Free manifestation quiz and starter kit from Amanda Ferrer.">
+  <meta name="twitter:image" content="https://www.alchemistbehavior.com/site/og-image.jpg">
+  <link rel="preload" href="site/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="site/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="site/amanda-ferrer.webp" as="image">
+  <link rel="stylesheet" href="site/site.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff5fae'/%3E%3Cstop offset='1' stop-color='%23ffd95a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Cpath d='M32 10l4.5 16.5L53 32l-16.5 4.5L32 53l-4.5-16.5L11 32l16.5-5.5z' fill='%23fff'/%3E%3C/svg%3E">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://www.alchemistbehavior.com/#org",
-        "name": "Alchemist Behavior",
-        "url": "https://www.alchemistbehavior.com/",
-        "description": "Mindset and manifestation coaching for women ready to magnetize their next-level self."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.alchemistbehavior.com/#org",
+      "name": "Alchemist Behavior",
+      "url": "https://www.alchemistbehavior.com/",
+      "logo": "https://www.alchemistbehavior.com/site/og-image.jpg",
+      "founder": {
+        "@id": "https://www.alchemistbehavior.com/#amanda"
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.alchemistbehavior.com/#website",
-        "url": "https://www.alchemistbehavior.com/",
-        "name": "Alchemist Behavior",
-        "publisher": { "@id": "https://www.alchemistbehavior.com/#org" },
-        "inLanguage": "en-US"
+      "description": "Private mindset and manifestation coaching led by Amanda Ferrer.",
+      "sameAs": [
+        "https://www.instagram.com/alchemistbehavior",
+        "https://www.tiktok.com/@alchemistbehavior"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.alchemistbehavior.com/#amanda",
+      "name": "Amanda Ferrer",
+      "jobTitle": "Mindset and Manifestation Coach",
+      "description": "Author of Alchemist Behavior: A Guide to Becoming a Master Manifestor and founder of the Alchemist Behavior Movement, a community dedicated to turning pain into purpose and dreams into reality.",
+      "worksFor": {
+        "@id": "https://www.alchemistbehavior.com/#org"
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://www.alchemistbehavior.com/#webpage",
-        "url": "https://www.alchemistbehavior.com/",
-        "name": "Alchemist Behavior — 3-Month Quantum Shift Program",
-        "isPartOf": { "@id": "https://www.alchemistbehavior.com/#website" },
-        "about": { "@id": "https://www.alchemistbehavior.com/#program" },
-        "description": "Mindset + manifestation coaching for women ready to magnetize their next-level self. Book your Quantum Shift Call."
+      "url": "https://www.alchemistbehavior.com/",
+      "sameAs": [
+        "https://www.instagram.com/alchemistbehavior",
+        "https://www.tiktok.com/@alchemistbehavior"
+      ],
+      "image": "https://www.alchemistbehavior.com/site/amanda-ferrer.webp"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.alchemistbehavior.com/#website",
+      "url": "https://www.alchemistbehavior.com/",
+      "name": "Alchemist Behavior",
+      "publisher": {
+        "@id": "https://www.alchemistbehavior.com/#org"
       },
-      {
-        "@type": "Service",
-        "@id": "https://www.alchemistbehavior.com/#program",
-        "name": "3-Month Quantum Shift Program",
-        "serviceType": "Coaching",
-        "provider": { "@id": "https://www.alchemistbehavior.com/#org" },
-        "areaServed": "Worldwide",
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "Women entrepreneurs and creators seeking mindset and manifestation coaching"
-        },
-        "description": "A 3-month private coaching container for mindset, manifestation, and magnetic self-expression.",
-        "potentialAction": {
-          "@type": "ReserveAction",
-          "target": "https://www.alchemistbehavior.com/intake.html",
-          "name": "Book Your Quantum Shift Call"
-        }
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.alchemistbehavior.com/#webpage",
+      "url": "https://www.alchemistbehavior.com/",
+      "name": "Amanda Ferrer | Manifestation & Mindset Coach",
+      "isPartOf": {
+        "@id": "https://www.alchemistbehavior.com/#website"
+      },
+      "about": {
+        "@id": "https://www.alchemistbehavior.com/#program"
+      },
+      "primaryImageOfPage": "https://www.alchemistbehavior.com/site/og-image.jpg"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.alchemistbehavior.com/#program",
+      "name": "3-Month Quantum Shift Program",
+      "serviceType": "Life coaching, mindset and manifestation coaching",
+      "provider": {
+        "@id": "https://www.alchemistbehavior.com/#amanda"
+      },
+      "areaServed": "Worldwide",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Ambitious professionals, founders and creators"
+      },
+      "description": "Twelve weeks of private 1:1 coaching: identity reset, magnetic living rituals and aligned action, with Voxer access, a custom 90-day plan and business consulting.",
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "https://www.alchemistbehavior.com/intake.html",
+        "name": "Request your private call"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Book",
+      "@id": "https://www.alchemistbehavior.com/#book",
+      "name": "Alchemist Behavior: A Guide to Becoming a Master Manifestor",
+      "author": {
+        "@id": "https://www.alchemistbehavior.com/#amanda"
+      },
+      "numberOfPages": 55,
+      "inLanguage": "en",
+      "genre": [
+        "Self-help",
+        "Personal transformation",
+        "Manifestation"
+      ],
+      "image": "https://www.alchemistbehavior.com/site/book-cover.webp",
+      "description": "Nine chapters and a 30-day manifestation plan: self-concept, releasing limiting beliefs, gratitude and the scripting method, visualization and vision boards, manifesting money, love and career, staying in high vibration, and aligned action. Includes journal exercises and affirmations.",
+      "offers": {
+        "@type": "Offer",
+        "price": "22.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.alchemistbehavior.com/#book"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.alchemistbehavior.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is the Quantum Shift Program for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anyone ready to stop trying and start being. If you've read every manifestation book, journaled until your hand cramped, and you're still stuck waiting for permission, this is for you. You don't need to have it all figured out. You just need to be done playing small."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does the Quantum Shift Program cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pricing is shared on the discovery call so Amanda can recommend the right path for you. Payment plans are available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I've never had a coach. Is this weird?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It's a conversation with someone who has done the work and now helps other people do it. You talk, get real and make a plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I don't see results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Results come from doing the work: identity work, nervous system regulation and aligned action. Show up for 90 days like the version of you who already has it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I have to be spiritual?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This works whether you call it manifestation or compounding habits. The mechanics are the same: show up, decide, take aligned action, repeat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's in the free Manifesting Starter Kit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "45 manifestation journal prompts, a 7-day kickstart plan, the 5-minute daily journaling method and printable affirmation cards. It downloads instantly."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
-  <noscript>
-    <style>
-      .ns-fallback { max-width: 760px; margin: 0 auto; padding: 48px 24px; background: #FFF4E3; color: #1A1213; font: 16px/1.6 Georgia, serif; }
-      .ns-fallback h1 { font-size: 44px; line-height: 1.05; margin-bottom: 12px; }
-      .ns-fallback h2 { font-size: 24px; margin: 32px 0 10px; }
-      .ns-fallback a.cta { display: inline-block; background: #FFD93D; color: #1A1213; font-weight: 900; padding: 14px 22px; border-radius: 999px; border: 3px solid #1A1213; box-shadow: 4px 4px 0 #1A1213; text-decoration: none; margin-top: 18px; }
-      .ns-fallback ul { padding-left: 22px; }
-    </style>
-  </noscript>
-
 </head>
 <body>
-  
+  <a class="skip" href="#main">Skip to content</a>
 
-  <div id="root"></div>
+  <div class="bar"><b>Free</b> The Manifesting Starter Kit: 45 journal prompts + a 7-day kickstart. <a href="#kit">Get it free</a></div>
 
-  <script src="assets/b91fea4c-063.js"></script>
-  <script src="assets/f8eae5a9-21a.js"></script>
-  <script src="assets/0241336a-605.js"></script>
-  <script src="assets/a7db745c-330.js"></script>
-  <script src="assets/f4fd0e0a-0de.js"></script>
-  <script src="assets/8e742ffb-e54.js"></script>
-  <script src="assets/2a7d0ea8-082.js"></script>
-  <script src="assets/f4958b63-955.js"></script>
-  <script src="assets/03e95da7-1ab.js"></script>
-  <script src="assets/250828c9-617.js"></script>
-  <script src="assets/5ef1bcef-fa3.js"></script>
-  <script src="assets/05e8564c-6a2.js"></script>
-
-
-  <noscript>
-    <div class="ns-fallback">
-      <h1>Alchemist Behavior — 3-Month Quantum Shift Program</h1>
-      <p><strong>Mindset + manifestation coaching for women ready to magnetize their next-level self.</strong></p>
-      <p>Amanda's private 3-month coaching container moves you from stuck to magnetic. We work on belief rewiring, nervous-system shifts, and the exact decisions that collapse timelines on what you actually want — the money, the body, the relationship, the business, the version of you that already has it.</p>
-      <h2>What's inside the Quantum Shift</h2>
-      <ul>
-        <li>Private 1:1 calls — tailored mindset &amp; manifestation work</li>
-        <li>Belief rewiring: the stories keeping you where you are, dismantled</li>
-        <li>Magnetic self-expression practices — show up as the version of you who already has it</li>
-        <li>Voxer / text support between sessions</li>
-        <li>Access to the Alchemist Code book &amp; chapter work</li>
-      </ul>
-      <h2>Who it's for</h2>
-      <p>Women entrepreneurs, creators, and leaders who are done with surface-level mindset content and want the real reprogramming work.</p>
-      <p><a class="cta" href="/intake.html">Book Your Call →</a></p>
-      <p style="margin-top:24px;font-size:13px;color:#555;">This page is normally interactive. Enable JavaScript for the full experience, or <a href="/intake.html">go straight to the intake form</a>.</p>
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="brand" href="/" aria-label="Alchemist Behavior home"><span class="brand__name">Alchemist Behavior</span><span class="brand__sub">Amanda Ferrer</span></a>
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <nav class="nav__links" id="nav-links" aria-label="Main">
+        <a href="#quiz">Free Quiz</a>
+        <a href="#book">The Book</a>
+        <a href="#program">Coaching</a>
+        <a href="manifestation-journal-prompts.html">Journal Prompts</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn--sun btn--sm" href="intake.html">Book a call</a>
+      </nav>
     </div>
-  </noscript>
-  <a id="ab-float-cta" href="/intake.html" aria-label="Book your Quantum Shift Call" data-ab-cta="landing-float">Book Your Call &#x2726;</a>
-  <style>
-    #ab-float-cta {
-      position: fixed; bottom: 24px; right: 24px; z-index: 99999;
-      background: #FFD93D; color: #1A1213;
-      font-family: system-ui, -apple-system, sans-serif;
-      font-weight: 900; font-size: 16px; letter-spacing: 0.5px;
-      padding: 14px 22px; border-radius: 999px;
-      text-decoration: none; border: 3px solid #1A1213;
-      box-shadow: 4px 4px 0 #1A1213;
-      transition: transform 0.12s ease, box-shadow 0.12s ease;
-      cursor: pointer; user-select: none;
-    }
-    #ab-float-cta:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 #1A1213; }
-    #ab-float-cta:active { transform: translate(2px,2px); box-shadow: 2px 2px 0 #1A1213; }
-    @media (max-width: 540px) {
-      #ab-float-cta { bottom: 16px; right: 16px; font-size: 15px; padding: 12px 18px; }
-    }
-  </style>
+  </header>
 
-</body></html>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <span class="sparkle" style="left:4%;top:10%" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+      <span class="sparkle" style="left:46%;top:6%;animation-delay:1s;color:#fff" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+      <span class="sparkle" style="right:5%;bottom:12%;animation-delay:2s" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+      <div class="wrap hero__grid">
+        <div>
+          <h1 class="mega">
+            <span class="kicker">Manifestation &amp; mindset coaching with Amanda Ferrer</span>
+            <span class="script-line">Your future self is already waiting.</span>
+            Become the version of you who <em>already has it.</em>
+          </h1>
+          <p class="lede">The money, the love, the business, the version of you that's been waiting. Manifestation isn't wishing. It's a formula, and I'll show you exactly how it works.</p>
+
+          <div class="lead" data-lead>
+            <form action="https://formspree.io/f/xwvydndk" method="POST">
+              <input type="hidden" name="_subject" value="New lead: Manifesting Starter Kit (hero)">
+              <input type="hidden" name="source" value="hero">
+              <div class="lead__head">
+                <div class="lead__icon" aria-hidden="true">Starter<br>Kit</div>
+                <p class="lead__title">Get the free Manifesting Starter Kit<small>45 journal prompts, a 7-day kickstart and affirmation cards.</small></p>
+              </div>
+              <div class="lead__row">
+                <label class="sr-only" for="h-name">First name</label><input id="h-name" name="name" type="text" autocomplete="given-name" placeholder="First name" required>
+                <label class="sr-only" for="h-email">Email</label><input id="h-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+                <button class="btn btn--pink" type="submit">Send it <span class="arrow" aria-hidden="true">→</span></button>
+              </div>
+              <p class="lead__status" role="status" aria-live="polite"></p>
+              <p class="lead__fine">Instant download. No spam, ever. Unsubscribe anytime.</p>
+            </form>
+            <div class="lead__done">
+              <h3>It's yours ✦</h3>
+              <p>Your Manifesting Starter Kit is ready. Start with the 7-day kickstart tomorrow morning.</p>
+              <a class="btn btn--sun" href="site/manifesting-starter-kit.pdf" download>Download the kit <span class="arrow" aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+          <p class="hero__alt">Not sure where you're stuck? <a href="#quiz">Take the 60-second quiz</a> · Ready to go all in? <a href="intake.html">Work with me 1:1</a></p>
+        </div>
+
+        <figure class="portrait">
+          <div class="portrait__frame">
+            <img src="site/amanda-ferrer.webp" srcset="site/amanda-ferrer-480.webp 480w, site/amanda-ferrer.webp 800w" sizes="(max-width: 980px) 80vw, 420px" width="800" height="800" alt="Amanda Ferrer, manifestation and mindset coach" fetchpriority="high">
+          </div>
+          <a href="#book"><img class="portrait__book" src="site/book-cover.webp" width="900" height="1440" alt="Alchemist Behavior: A Guide to Becoming a Master Manifestor"></a>
+          <div class="portrait__sticker" aria-hidden="true"><span><b>The book</b>Now<br>available</span></div>
+          <figcaption class="portrait__name"><span>Amanda Ferrer</span>Author &amp; coach</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>I am a magnet for everything meant for me</span><span>I trust the timing of my life</span><span>I am becoming the version of me I have always known</span><span>My future is already taken care of</span><span>I receive abundance with ease</span><span>The universe conspires in my favor</span><span>I am safe to want what I want</span><span>I rise to meet who I am becoming</span>
+        <span>I am a magnet for everything meant for me</span><span>I trust the timing of my life</span><span>I am becoming the version of me I have always known</span><span>My future is already taken care of</span><span>I receive abundance with ease</span><span>The universe conspires in my favor</span><span>I am safe to want what I want</span><span>I rise to meet who I am becoming</span>
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <section class="section section--teal on-dark" id="quiz">
+      <div class="wrap">
+        <div class="section__head center reveal">
+          <span class="eyebrow eyebrow--center">Free · Sixty seconds</span>
+          <h2 class="h2">What's really blocking <em>your manifestation?</em></h2>
+          <p class="lede">Five quick questions. Find out which of the four manifestation blocks is holding you back, and get the exact chapter and prompts to break through it.</p>
+        </div>
+
+        <div class="quiz reveal" id="quiz-app">
+          <div class="quiz__progress" aria-hidden="true"><i></i></div>
+
+          <div class="quiz__step" data-q="1">
+            <div class="quiz__count">Question 1 of 5</div>
+            <p class="quiz__q">When you picture the life you want, your first feeling is…</p>
+            <div class="quiz__opts">
+              <button class="quiz__opt" type="button" data-key="A" data-type="S">Excited, but it feels like it's meant for other people</button>
+              <button class="quiz__opt" type="button" data-key="B" data-type="B">Hopeful, until a voice says "be realistic"</button>
+              <button class="quiz__opt" type="button" data-key="C" data-type="E">Inspired one day, drained the next</button>
+              <button class="quiz__opt" type="button" data-key="D" data-type="A">Clear. I just haven't started yet</button>
+            </div>
+          </div>
+          <div class="quiz__step" data-q="2">
+            <div class="quiz__count">Question 2 of 5</div>
+            <p class="quiz__q">Your journaling usually looks like…</p>
+            <div class="quiz__opts">
+              <button class="quiz__opt" type="button" data-key="A" data-type="S">I write what I want, but I don't believe it's really me</button>
+              <button class="quiz__opt" type="button" data-key="B" data-type="B">I start strong, then quit when nothing happens fast</button>
+              <button class="quiz__opt" type="button" data-key="C" data-type="E">It depends completely on my mood</button>
+              <button class="quiz__opt" type="button" data-key="D" data-type="A">I've filled notebooks, but real life hasn't changed</button>
+            </div>
+          </div>
+          <div class="quiz__step" data-q="3">
+            <div class="quiz__count">Question 3 of 5</div>
+            <p class="quiz__q">When something goes wrong, you tend to…</p>
+            <div class="quiz__opts">
+              <button class="quiz__opt" type="button" data-key="A" data-type="S">Take it as proof of who I am</button>
+              <button class="quiz__opt" type="button" data-key="B" data-type="B">Think, "I knew this wouldn't work"</button>
+              <button class="quiz__opt" type="button" data-key="C" data-type="E">Spiral for days before I bounce back</button>
+              <button class="quiz__opt" type="button" data-key="D" data-type="A">Wait for a clearer sign before trying again</button>
+            </div>
+          </div>
+          <div class="quiz__step" data-q="4">
+            <div class="quiz__count">Question 4 of 5</div>
+            <p class="quiz__q">Which sentence sounds most like you?</p>
+            <div class="quiz__opts">
+              <button class="quiz__opt" type="button" data-key="A" data-type="S">"That's just not who I am."</button>
+              <button class="quiz__opt" type="button" data-key="B" data-type="B">"Manifestation works for some people."</button>
+              <button class="quiz__opt" type="button" data-key="C" data-type="E">"I can't stay consistent."</button>
+              <button class="quiz__opt" type="button" data-key="D" data-type="A">"I'll go for it once I feel ready."</button>
+            </div>
+          </div>
+          <div class="quiz__step" data-q="5">
+            <div class="quiz__count">Question 5 of 5</div>
+            <p class="quiz__q">What would change everything for you this year?</p>
+            <div class="quiz__opts">
+              <button class="quiz__opt" type="button" data-key="A" data-type="S">Finally feeling worthy of what I want</button>
+              <button class="quiz__opt" type="button" data-key="B" data-type="B">Proof that this actually works</button>
+              <button class="quiz__opt" type="button" data-key="C" data-type="E">Protecting my energy and my peace</button>
+              <button class="quiz__opt" type="button" data-key="D" data-type="A">Taking the leap I keep putting off</button>
+            </div>
+          </div>
+
+          <div class="quiz__step quiz__gate" data-gate>
+            <span class="tag">Your result is ready</span>
+            <h3>Where should I send your results?</h3>
+            <p>Get your manifestation block, the chapter of the book written for it, and your personal prompts. You'll also get the free Manifesting Starter Kit.</p>
+            <form action="https://formspree.io/f/xwvydndk" method="POST">
+              <input type="hidden" name="_subject" value="New lead: Manifestation Quiz">
+              <input type="hidden" name="source" value="quiz">
+              <input type="hidden" name="result" value="">
+              <input type="hidden" name="answers" value="">
+              <div class="lead__row">
+                <label class="sr-only" for="q-name">First name</label><input id="q-name" name="name" type="text" autocomplete="given-name" placeholder="First name" required>
+                <label class="sr-only" for="q-email">Email</label><input id="q-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+              </div>
+              <button class="btn btn--pink" type="submit">Reveal my result <span class="arrow" aria-hidden="true">→</span></button>
+              <p class="lead__status" role="status" aria-live="polite"></p>
+              <p class="lead__fine">No spam, ever. Unsubscribe anytime.</p>
+            </form>
+          </div>
+
+          <div class="quiz__step" data-result="S">
+            <span class="tag">Your manifestation block</span>
+            <p class="result__type">The Story Keeper</p>
+            <p>Your desires are clear. Your self-concept just hasn't caught up. You're still living by an old story about who you are and what you're allowed to have, so even good things feel like they belong to someone else. The fix isn't wanting harder. It's upgrading your story.</p>
+            <p><strong>Start with Chapter 2, The Power of Self-Concept</strong> ("Upgrade Your Story" and "Reprogramming Starts with Language"). Your prompts:</p>
+            <ul class="result__prompts"><li>Who would I be if I already had it, and what would that version of me do today?</li><li>What do I believe I deserve, and where did that belief come from?</li><li>How does my future self speak? Write a paragraph in that voice.</li></ul>
+            <div class="result__ctas"><a class="btn btn--sun" href="#book" data-order>Get the book · $22</a><a class="btn" href="site/manifesting-starter-kit.pdf" download>Download your free kit</a></div>
+            <p style="margin-top:18px">Want this rewired for good? <a class="textlink" href="intake.html">Book a Quantum Shift call</a></p>
+            <button class="quiz__restart" type="button">Retake the quiz</button>
+          </div>
+          <div class="quiz__step" data-result="B">
+            <span class="tag">Your manifestation block</span>
+            <p class="result__type">The Skeptic</p>
+            <p>Part of you wants this to work. Another part is braced for disappointment, and that part is running the show. Limiting beliefs act like a filter: you only notice the evidence that proves them right. Once you name them, they lose their grip.</p>
+            <p><strong>Start with Chapter 3, Releasing Limiting Beliefs</strong> (the "Limiting Belief Inventory" journal exercise). Your prompts:</p>
+            <ul class="result__prompts"><li>Finish the sentence: "People like me can't…" Now write why that isn't true.</li><li>What would I lose if I got everything I wanted?</li><li>Which belief, if I dropped it today, would change everything?</li></ul>
+            <div class="result__ctas"><a class="btn btn--sun" href="#book" data-order>Get the book · $22</a><a class="btn" href="site/manifesting-starter-kit.pdf" download>Download your free kit</a></div>
+            <p style="margin-top:18px">Want help taking these apart? <a class="textlink" href="intake.html">Book a Quantum Shift call</a></p>
+            <button class="quiz__restart" type="button">Retake the quiz</button>
+          </div>
+          <div class="quiz__step" data-result="E">
+            <span class="tag">Your manifestation block</span>
+            <p class="result__type">The Energy Leaker</p>
+            <p>You get inspired, then life drains it right back out. Your manifestation isn't failing. Your energy is leaking, to people, habits and thoughts that pull you out of alignment. Protect it and everything you're calling in gets easier to receive.</p>
+            <p><strong>Start with Chapter 7, Staying in High Vibration</strong> ("Protecting Your Energy" and "When the Universe Tests You"). Your prompts:</p>
+            <ul class="result__prompts"><li>What drains my energy, and what's one boundary that would protect it?</li><li>Which thought did I repeat most yesterday? Do I want to keep it?</li><li>How can I make today feel like my future self's ordinary day?</li></ul>
+            <div class="result__ctas"><a class="btn btn--sun" href="#book" data-order>Get the book · $22</a><a class="btn" href="site/manifesting-starter-kit.pdf" download>Download your free kit</a></div>
+            <p style="margin-top:18px">Want accountability between the highs? <a class="textlink" href="intake.html">Book a Quantum Shift call</a></p>
+            <button class="quiz__restart" type="button">Retake the quiz</button>
+          </div>
+          <div class="quiz__step" data-result="A">
+            <span class="tag">Your manifestation block</span>
+            <p class="result__type">The Waiting Dreamer</p>
+            <p>You know what you want and you've done the inner work. What's missing is the move. You're waiting to feel ready, but readiness comes after the leap, not before it. Your next level is on the other side of one bold, aligned action.</p>
+            <p><strong>Start with Chapter 8, Taking Aligned Action</strong> ("The Formula" and "The Art of Letting Go"). Your prompts:</p>
+            <ul class="result__prompts"><li>What's one bold move I've been postponing, and what date will I make it?</li><li>What would I do today if I trusted it was already done?</li><li>Who do I need to talk to, ask or invite this week?</li></ul>
+            <div class="result__ctas"><a class="btn btn--sun" href="#book" data-order>Get the book · $22</a><a class="btn" href="site/manifesting-starter-kit.pdf" download>Download your free kit</a></div>
+            <p style="margin-top:18px">Ready to make the leap with a coach? <a class="textlink" href="intake.html">Book a Quantum Shift call</a></p>
+            <button class="quiz__restart" type="button">Retake the quiz</button>
+          </div>
+          <noscript><p class="quiz__q">The quiz needs JavaScript. In the meantime, try the <a href="manifestation-journal-prompts.html">45 free manifestation journal prompts</a>.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="The Quantum Shift at a glance">
+      <div class="wrap stats__grid">
+        <div class="stat"><div class="stat__num">12</div><div class="stat__label">weekly private 1:1 sessions</div></div>
+        <div class="stat"><div class="stat__num">90</div><div class="stat__label">day custom manifestation plan</div></div>
+        <div class="stat"><div class="stat__num">Daily</div><div class="stat__label">Voxer access between sessions</div></div>
+        <div class="stat"><div class="stat__num">Lifetime</div><div class="stat__label">membership in the Movement</div></div>
+      </div>
+    </section>
+
+    <!-- ABOUT / NOTE -->
+    <section class="section section--cream" id="amanda">
+      <div class="wrap about">
+        <figure class="about__photo reveal">
+          <img src="site/amanda-ferrer.webp" width="800" height="800" loading="lazy" alt="Portrait of Amanda Ferrer">
+          <span class="tag">Founder, Alchemist Behavior</span>
+        </figure>
+        <div class="reveal">
+          <span class="eyebrow">A note from Amanda</span>
+          <h2 class="h2">Turn your pain into purpose, <em>and your dreams into reality.</em></h2>
+          <blockquote class="note__text">
+            <p>At the core of this book is my unwavering passion for helping people transform their lives. I've witnessed how powerful manifestation can be, and after seeing it work time and time again, I knew I had to share this gift with as many people as possible. It's my deepest hope that these pages help you find your power and change the trajectory of your entire life.</p>
+            <p>This book isn't just a guide, but the beginning of the <em>Alchemist Behavior Movement</em>, a community of people dedicated to turning their pain into purpose and their dreams into a reality. Thank you for being a part of this journey. Let's transform our lives together.</p>
+          </blockquote>
+          <img class="note__signature" src="site/signature-dark.png" width="543" height="164" loading="lazy" alt="Signed, Amanda Ferrer">
+          <p class="note__role">Author &amp; founder, Alchemist Behavior</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULA -->
+    <section class="section section--blush" id="approach">
+      <div class="wrap">
+        <div class="section__head center reveal">
+          <span class="eyebrow eyebrow--center">The formula</span>
+          <h2 class="h2">Manifestation isn't magic. <em>It's mechanics.</em></h2>
+          <p class="lede">Bring your skepticism. This works whether you call it manifestation or compounding habits. The mechanics are the same.</p>
+        </div>
+        <div class="formula">
+          <div class="formula__card reveal"><div class="formula__num">I</div><h3>Identity work</h3><p>Rewrite the self-concept that's been quietly capping your income, relationships and confidence.</p></div>
+          <div class="formula__card reveal"><div class="formula__num">II</div><h3>Nervous system regulation</h3><p>Make your next level feel safe, so you stop self-sabotaging the moment it arrives.</p></div>
+          <div class="formula__card reveal"><div class="formula__num">III</div><h3>Aligned action</h3><p>Bold, specific moves made from certainty instead of fear. Decide, act, repeat.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section class="section section--soft" id="book">
+      <div class="wrap book">
+        <figure class="book__cover reveal">
+          <img src="site/book-cover.webp" width="900" height="1440" loading="lazy" alt="Cover of Alchemist Behavior: A Guide to Becoming a Master Manifestor by Amanda Ferrer">
+          <div class="portrait__sticker" aria-hidden="true"><span><b>Signed</b>copies<br>available</span></div>
+        </figure>
+        <div class="reveal">
+          <span class="eyebrow">The book</span>
+          <h2 class="h2">Alchemist Behavior</h2>
+          <p class="book__subtitle">A Guide to Becoming a Master Manifestor</p>
+          <blockquote class="book__quote">"You are the alchemist of your own reality. You don't beg for scraps from the universe. You command your energy, your thoughts, and your actions in a way that bends reality toward you."<cite>From the conclusion, <em>You Are the Alchemist</em></cite></blockquote>
+          <p class="lede">Nine chapters and 55 pages of journal exercises, the scripting method, myth-busting and a complete 30-day manifestation plan. Start here if you want the method before the mentorship.</p>
+          <p class="book__inside"><span>9 chapters</span><span>4 journal exercises</span><span>Scripting method</span><span>30-day plan</span></p>
+          <div class="book__buy">
+            <div class="price">$22<small>Personal inscription available</small></div>
+            <a class="btn btn--pink" href="#order" data-order>Order your copy <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="wrap" id="contents" style="margin-top:clamp(64px,8vw,100px)">
+        <div class="section__head reveal" style="margin-bottom:32px">
+          <span class="eyebrow">Table of contents</span>
+          <h2 class="h2">What's inside <em>the book.</em></h2>
+        </div>
+        <div class="toc-grid reveal">
+          <div class="toc-card"><div class="toc-card__num">Chapter I</div><h3>Understanding Manifestation</h3><ul><li>Introduction</li><li>“I Am Already Blessed” journal exercise</li><li>Myth Busting Moment</li></ul></div>
+          <div class="toc-card"><div class="toc-card__num">Chapter II</div><h3>The Power of Self-Concept</h3><ul><li>Upgrade Your Story</li><li>Your Self-Concept Is a Mirror</li><li>Reprogramming Starts with Language</li></ul></div>
+          <div class="toc-card"><div class="toc-card__num">Chapter III</div><h3>Releasing Limiting Beliefs</h3><ul><li>Limiting Belief Inventory journal exercise</li><li>Rewire Your Brain</li><li>Your Thoughts Are Seeds</li></ul></div>
+          <div class="toc-card"><div class="toc-card__num">Chapter IV</div><h3>Gratitude as Your Magnet</h3><ul><li>Gratitude First, Manifestation Second</li><li>Daily Gratitude Practice</li><li>Scripting Method</li></ul></div>
+          <div class="toc-card"><div class="toc-card__num">Chapter V</div><h3>Visualization &amp; Vision Boards</h3><ul><li>How to Visualize Like a Manifestation Pro</li><li>The Magic of Vision Boards</li></ul></div>
+          <div class="toc-card"><div class="toc-card__num">Chapter VI</div><h3>Manifesting Money, Love &amp; Career</h3><ul><li>Manifesting Love</li><li>Manifesting Money</li><li>Manifesting Career Success</li></ul></div>
+          <div class="toc-card"><div class="toc-card__num">Chapter VII</div><h3>Staying in High Vibration</h3><ul><li>Signs From the Universe</li><li>When the Universe Tests You</li><li>Protecting Your Energy</li><li>Meet Your Magnetic Self journal exercise</li></ul></div>
+          <div class="toc-card"><div class="toc-card__num">Chapter VIII</div><h3>Taking Aligned Action</h3><ul><li>The Formula</li><li>The Art of Letting Go</li></ul></div>
+          <div class="toc-card"><div class="toc-card__num">Chapter IX</div><h3>Your 30-Day Manifestation Plan</h3><ul><li>New Laws for Your New Life</li><li>Daily Framework</li><li>Week-by-Week Focus</li><li>Affirmations for the Road</li></ul></div>
+        </div>
+        <p class="toc-foot">Plus <em>You Are the Alchemist</em>, the conclusion, and a note from Amanda. <a class="textlink" href="#order" data-order>Order the book · $22</a></p>
+      </div>
+    </section>
+
+    <!-- PROGRAM -->
+    <section class="section section--plum on-dark" id="program">
+      <div class="wrap">
+        <div class="section__head center reveal">
+          <span class="eyebrow eyebrow--center">1:1 coaching</span>
+          <h2 class="h2">The 3-Month Quantum Shift. <em>No going back.</em></h2>
+          <p class="lede">Weekly check-ins, life coaching and business consulting with me. At the end, you're not living the same life. You're not even the same person.</p>
+        </div>
+        <div class="phases">
+          <article class="phase reveal"><div class="phase__num">Phase one</div><h3>Identity Reset</h3><div class="phase__month">Month 1</div><p>We tear down the old story and rebuild who you believe you are.</p></article>
+          <article class="phase reveal"><div class="phase__num">Phase two</div><h3>Magnetic Living</h3><div class="phase__month">Month 2</div><p>Daily rituals, mirror work, scripting and energy hygiene that compound.</p></article>
+          <article class="phase reveal"><div class="phase__num">Phase three</div><h3>Aligned Action</h3><div class="phase__month">Month 3</div><p>Bold moves, real results. By week 12, you're already living in the new timeline.</p></article>
+        </div>
+        <div class="included">
+          <div class="reveal">
+            <span class="eyebrow">What's included</span>
+            <h3 class="h3" style="margin-top:10px;color:#fff">Everything you need to make the shift permanent.</h3>
+            <p style="margin-top:16px;color:rgba(255,255,255,.78)">Investment is shared on your discovery call, so I can recommend the right path for you. Payment plans available.</p>
+            <a class="btn btn--sun" href="intake.html">Book your Quantum Shift call <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+          <div class="included__list reveal">
+            <div class="included__item"><h4>12 weekly 1:1 calls</h4><p>Real talk, every week. We unblock, plan and align.</p></div>
+            <div class="included__item"><h4>Voxer between sessions</h4><p>Voice memos with me when you need a pep talk or a reframe.</p></div>
+            <div class="included__item"><h4>Custom manifestation plan</h4><p>A 90-day roadmap built around your timeline: career, money, love.</p></div>
+            <div class="included__item"><h4>Business &amp; career consulting</h4><p>Building a brand, a business or a side hustle? We work on it together.</p></div>
+            <div class="included__item"><h4>Workbooks &amp; prompts</h4><p>New prompts every week to rewire the beliefs running the show.</p></div>
+            <div class="included__item"><h4>Lifetime community</h4><p>You're part of the Alchemist Behavior Movement, for good.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="section section--cream" id="results">
+      <div class="wrap">
+        <div class="section__head center reveal">
+          <span class="eyebrow eyebrow--center">Real timelines</span>
+          <h2 class="h2">They did the work. <em>The universe answered.</em></h2>
+        </div>
+        <div class="testimonials">
+          <figure class="testimonial reveal"><blockquote>I went from "someday" to "it's already done" in 90 days. Tripled my income, moved cities, and started the brand I'd been sitting on for four years.</blockquote><figcaption>Quantum Shift client</figcaption></figure>
+          <figure class="testimonial reveal"><blockquote>Working with Amanda was the moment my old life ended. I'm not the same person, and I'm never going back.</blockquote><figcaption>Quantum Shift client</figcaption></figure>
+          <figure class="testimonial reveal"><blockquote>Amanda is the friend who tells you the truth and the coach who knows the formula. The combination is unreal. I am unrecognizable to my past self.</blockquote><figcaption>Quantum Shift client</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIT -->
+    <section class="section section--blush" id="fit">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <span class="eyebrow">Is this you?</span>
+          <h2 class="h2">You've read every book. <em>Now it's time to become the proof.</em></h2>
+        </div>
+        <div class="fit">
+          <div class="fit__card reveal"><div class="fit__emoji">done reading</div><h3>You've done the homework</h3><p>You've journaled until your hand cramped. You don't need more information. You need implementation.</p></div>
+          <div class="fit__card reveal"><div class="fit__emoji">building it</div><h3>You're creating something</h3><p>A brand, a business, a bigger career. You want a coach for the mindset and the moves.</p></div>
+          <div class="fit__card reveal"><div class="fit__emoji">done waiting</div><h3>You're done playing small</h3><p>You don't need it all figured out. You need to stop waiting for permission to want what you want.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KIT -->
+    <section class="section section--grad on-dark" id="kit">
+      <div class="wrap kit">
+        <div class="kit__mock reveal" aria-hidden="true">
+          <div class="kit__page kit__page--2"><div class="k1">Day 1 · Clarity</div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="kit__page kit__page--1"><div class="k1">free download</div><div class="k2">Manifesting Starter Kit</div><div class="k3">Alchemist Behavior</div></div>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Free download</span>
+          <h2 class="h2">The Manifesting <em>Starter Kit</em></h2>
+          <ul class="kit__list">
+            <li>45 manifestation journal prompts for self-concept, money, love and more</li>
+            <li>A 7-day kickstart: one simple practice a day for your first week</li>
+            <li>The 5-minute daily journaling method</li>
+            <li>Printable affirmation cards</li>
+          </ul>
+          <div class="lead" data-lead>
+            <form action="https://formspree.io/f/xwvydndk" method="POST">
+              <input type="hidden" name="_subject" value="New lead: Manifesting Starter Kit (kit section)">
+              <input type="hidden" name="source" value="kit-section">
+              <div class="lead__row">
+                <label class="sr-only" for="k-name">First name</label><input id="k-name" name="name" type="text" autocomplete="given-name" placeholder="First name" required>
+                <label class="sr-only" for="k-email">Email</label><input id="k-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+                <button class="btn btn--pink" type="submit">Get it free <span class="arrow" aria-hidden="true">→</span></button>
+              </div>
+              <p class="lead__status" role="status" aria-live="polite"></p>
+              <p class="lead__fine">Instant download. No spam, ever.</p>
+            </form>
+            <div class="lead__done"><h3>It's yours ✦</h3><p>Your kit is ready to download.</p><a class="btn btn--sun" href="site/manifesting-starter-kit.pdf" download>Download the kit <span class="arrow" aria-hidden="true">↓</span></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section section--cream" id="process">
+      <div class="wrap">
+        <div class="section__head center reveal">
+          <span class="eyebrow eyebrow--center">Work with me</span>
+          <h2 class="h2">Three steps to your <em>Quantum Shift.</em></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><div class="step__num">I</div><h3>Fill out the intake</h3><p>About ten minutes. Tell me the old story and the one you're ready to live. Be honest. Be messy. Be you.</p></div>
+          <div class="step reveal"><div class="step__num">II</div><h3>Your discovery call</h3><p>We talk through your goals, I recommend the right path, and we decide together if we're a fit.</p></div>
+          <div class="step reveal"><div class="step__num">III</div><h3>Your shift begins</h3><p>Your 90-day plan, weekly calls and Voxer access start right away.</p></div>
+        </div>
+        <div class="center" style="margin-top:40px"><a class="btn btn--pink" href="intake.html">Start the intake <span class="arrow" aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--blush" id="faq">
+      <div class="wrap">
+        <div class="section__head center reveal">
+          <span class="eyebrow eyebrow--center">Questions</span>
+          <h2 class="h2">Honestly <em>answered.</em></h2>
+        </div>
+        <div class="faq reveal">
+          <details open><summary>Who is the Quantum Shift Program for?</summary><div><p>Anyone ready to stop "trying" and start being. If you've read every manifestation book, journaled until your hand cramped, and you're still stuck waiting for permission, this is for you. You don't need to have it all figured out. You just need to be done playing small.</p></div></details>
+          <details><summary>How much does it cost?</summary><div><p>Pricing is shared on the discovery call so I can recommend the right path for you. The investment is meaningful, because the shift is meaningful. Payment plans available.</p></div></details>
+          <details><summary>I've never had a coach. Is this weird?</summary><div><p>Nope. It's a conversation with someone who has done the work and now helps other people do it. We talk like friends. We laugh. We get real. We make a plan. That's it.</p></div></details>
+          <details><summary>What if I don't see results?</summary><div><p>You will, but only if you do the work. This isn't magic. It's identity work, nervous system regulation and aligned action. Show up for 90 days like the version of you who already has it, and the universe matches.</p></div></details>
+          <details><summary>Do I have to be "spiritual"?</summary><div><p>No. Bring your skepticism. This works whether you call it manifestation or compounding habits. The mechanics are the same: show up, decide, take aligned action, repeat.</p></div></details>
+          <details><summary>What's in the free Starter Kit?</summary><div><p>45 manifestation journal prompts, a 7-day kickstart plan, the 5-minute daily journaling method and printable affirmation cards. It downloads instantly.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="section closing">
+      <span class="sparkle" style="left:8%;top:18%" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+      <span class="sparkle" style="right:10%;top:30%;color:#fff;animation-delay:1.5s" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0l2.6 9.4L24 12l-9.4 2.6L12 24l-2.6-9.4L0 12l9.4-2.6z"/></svg></span>
+      <div class="wrap">
+        <span class="eyebrow eyebrow--center">The next 90 days</span>
+        <h2 class="mega">The next 90 days are happening <em>either way.</em></h2>
+        <p class="lede">You can spend them waiting, or you can spend them becoming. Book the call. Show up as the version of you who already said yes.</p>
+        <div class="closing__ctas">
+          <a class="btn btn--gold" href="intake.html">Book your Quantum Shift call <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#quiz">Take the free quiz</a>
+        </div>
+        <img class="note__signature" src="site/signature-gold.png" width="543" height="164" loading="lazy" alt="Amanda Ferrer" style="width:min(240px,60%)">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="/"><span class="brand__name">Alchemist Behavior</span></a>
+          <p style="max-width:380px">Your guide, every step of the way. Manifestation coaching, the 3-Month Quantum Shift Program and the book <em>Alchemist Behavior</em> with Amanda Ferrer.</p>
+        </div>
+        <div><h4>Work with me</h4><ul><li><a href="#program">Quantum Shift Program</a></li><li><a href="intake.html">Book a call</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+        <div><h4>Free stuff</h4><ul><li><a href="#quiz">Manifestation quiz</a></li><li><a href="#kit">Starter Kit</a></li><li><a href="manifestation-journal-prompts.html">Journal prompts</a></li><li><a href="#book">The book</a></li></ul></div>
+        <div><h4>Find me</h4><ul><li><a href="https://www.instagram.com/alchemistbehavior" target="_blank" rel="noopener">Instagram @alchemistbehavior</a></li><li><a href="https://www.tiktok.com/@alchemistbehavior" target="_blank" rel="noopener">TikTok @alchemistbehavior</a></li></ul></div>
+      </div>
+      <div class="footer__base"><span>© 2026 Amanda Ferrer · Alchemist Behavior</span><span>Made in a new timeline ✦</span></div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky CTA -->
+  <div class="mbar">
+    <a class="btn btn--sun" href="#kit">Free kit</a>
+    <a class="btn btn--pink" href="intake.html">Book a call</a>
+  </div>
+
+  <!-- Exit offer -->
+  <dialog class="modal" id="kit-offer" aria-labelledby="kit-offer-title">
+    <div class="modal__top"></div>
+    <div class="modal__inner">
+      <button class="modal__close" type="button" aria-label="Close">×</button>
+      <span class="eyebrow">Wait, before you go</span>
+      <h2 id="kit-offer-title">Take the Starter Kit with you.</h2>
+      <p class="modal__intro">45 manifestation journal prompts, a 7-day kickstart and affirmation cards. Free, instant download.</p>
+      <div class="lead" data-lead>
+        <form action="https://formspree.io/f/xwvydndk" method="POST">
+          <input type="hidden" name="_subject" value="New lead: Manifesting Starter Kit (exit offer)">
+          <input type="hidden" name="source" value="exit-offer">
+          <div class="lead__row">
+            <label class="sr-only" for="x-name">First name</label><input id="x-name" name="name" type="text" autocomplete="given-name" placeholder="First name" required>
+            <label class="sr-only" for="x-email">Email</label><input id="x-email" name="email" type="email" autocomplete="email" placeholder="Email address" required>
+            <button class="btn btn--pink" type="submit">Send me the kit</button>
+          </div>
+          <p class="lead__status" role="status" aria-live="polite"></p>
+          <p class="lead__fine">No spam, ever. Unsubscribe anytime.</p>
+        </form>
+        <div class="lead__done"><h3>It's yours ✦</h3><p>Your kit is ready.</p><a class="btn btn--sun" href="site/manifesting-starter-kit.pdf" download>Download the kit</a></div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Book order -->
+  <dialog class="modal order" id="order" aria-labelledby="order-title">
+    <div class="modal__top"></div>
+    <div class="modal__inner">
+      <button class="modal__close" type="button" aria-label="Close">×</button>
+      <div class="order__form">
+        <span class="eyebrow">Order the book</span>
+        <h2 id="order-title">Alchemist Behavior · $22</h2>
+        <p class="modal__intro">Reserve your copy below. Amanda will email you a payment link within 24 hours.</p>
+        <form action="https://formspree.io/f/xwvydndk" method="POST">
+          <input type="hidden" name="_subject" value="New book order: Alchemist Behavior">
+          <label class="field"><span>Name</span><input name="Name" type="text" autocomplete="name" required></label>
+          <label class="field"><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+          <label class="field"><span>Shipping address</span><input name="Address" type="text" autocomplete="street-address" placeholder="Street, city, state, ZIP, country" required></label>
+          <div class="field-row">
+            <label class="field"><span>Quantity</span><input name="Quantity" type="number" min="1" value="1" required></label>
+            <label class="field"><span>Inscription (optional)</span><input name="Inscription" type="text" placeholder="Who should Amanda sign it to?"></label>
+          </div>
+          <button class="btn btn--pink" type="submit">Reserve my copy</button>
+          <p class="order__status" role="status" aria-live="polite"></p>
+          <p class="order__fine">No payment is taken on this form.</p>
+        </form>
+      </div>
+      <div class="order__done" hidden>
+        <span class="eyebrow">Order received</span>
+        <h2>Your copy is reserved.</h2>
+        <p class="modal__intro">Amanda will email you a payment link within 24 hours.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="site/site.js" defer></script>
+</body>
+</html>
