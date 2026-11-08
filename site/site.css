@@ -502,3 +502,14 @@ img.lead__icon { width: 52px; height: 67px; padding: 0; background: none; border
 .faq summary::after { transition: background 0.25s, color 0.25s; }
 .faq details[open] summary::after { content: "\2212"; transform: none; }
 @media (max-width: 1200px) { .hero > .sparkle:nth-of-type(1), .hero > .sparkle:nth-of-type(2) { display: none; } }
+
+/* Show the headshot in its natural shape, uncropped */
+.portrait::before, .portrait::after { display: none; }
+.portrait__frame { border-radius: 18px; aspect-ratio: 1209 / 1300; border: 1px solid rgba(233, 196, 126, 0.55); background: none; }
+.portrait__frame img { object-fit: contain; }
+.portrait__book { left: -40px; bottom: -24px; }
+.portrait__sticker { right: -22px; top: -18px; }
+.portrait__name { right: -18px; bottom: 28px; }
+.about__photo::before { inset: -12px 12px 12px -12px; border-radius: 20px; }
+.about__photo img { border-radius: 16px; }
+.byline img { object-fit: cover; object-position: center 25%; }
